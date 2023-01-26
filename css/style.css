@@ -1,34 +1,251 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: open sans,sans-serif;
+    background: #151d29;
+    background: #d6e7f7;
+    color: hsl(0, 0%, 98%);
+    transition: background 0.75s ease-in-out;
 }
 
-.header{
+.logo img {
+    position: absolute;
+    width: 17%;
+    top: 0px;
+    left: 0;
+}   
+
+header {
+    width: 100vw;
+    height: 11vh;
     position: absolute;
     top: 0;
-    width: 100%;
-    color: #fff;
-    z-index: 100;
-    transition: .25s padding-top ease-in-out,.25s padding-bottom ease-in-out;
-    background: 0 0;
 }
 
-.container{
-    width: 100%;
-    padding-right: 28px;
-    padding-left: 28px;
-    margin-right: auto;
-    margin-left: auto;
+header .container {
+    color: #0073c3;
+    font-size: 10px;
 }
 
-.hero{
-    position: relative;
-    color: #fff;
-    background: linear-gradient(to bottom,#7a19f1,#332179);
-    background-attachment: fixed;
+header h1 {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
 }
+
+/* main {
+} */
+
+/* footer {
+    bottom: 0;
+    width: 100vw;
+    height: 11vh;
+    display: block;
+    position: fixed;
+    background-color: rgb(25 25 25);;
+} */
+
+/* absolute position the input element on top of the accompanying svg element */
+  label {
+    text-align: -webkit-center;
+  }
+
+  label input {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 3%;
+    opacity: 0;
+    z-index: 3;
+  }
+
+  label svg {
+    width: 80px;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    z-index: -1;
+  }
+
+  /* include transitions for the elements modified as the input is checked */
+  label input + svg .light {
+    transition: opacity 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
+  }
+
+  label input + svg .translate,
+  label input + svg .rotate,
+  label input + svg .background,
+  label input + svg .astronaut,
+  label input + svg .surfer {
+    transition: transform 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
+  }
+
+  /* make the .light element fully transparent to have the .dark variant see through */
+  label input:checked + svg .light {
+    opacity: 0;
+  }
+
+  /* translate the sun/moon toward the right (by default it is pushed back with a negative translation) */
+  label input:checked + svg .translate {
+    transform: translateX(0px);
+  }
+
+  /* rotate the moon (by default it is rotated counter-clockwise) */
+  label input:checked + svg .rotate {
+    transform: rotate(0deg);
+  }
+
+  /* translate the scale the backgrounds to 0
+  this is rather neat, so meant an extra comment
+  - the light background is positioned with two groups, one pushing it below the graphic, one back up; by removing the translation of this last group the background "returns" below the toggle
+  - the dark background is positioned above and with a smaller vertical scale; by removing the translation it is placed in full view and by increasing its scale it's as if the stars would tumble down with different rates
+  */
+  label input:checked + svg .background {
+    transform: translate(0px) scale(1);
+  }
+
+@media screen and (min-width: 375px) {
+  label svg {
+    left: 40%;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  label svg {
+    left: 42%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo img {
+    top: 10px;
+    width: 15%;
+  }
+
+  header .container {
+    font-size: 15px;
+  }
+
+  label svg {
+    left: 45%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo img {
+    top: 0px;
+    width: 15%;
+  }
+
+  header .container {
+    font-size: 20px;
+  }
+
+  label svg {
+    left: 47%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo img {
+    width: 11%;
+  }
+
+  header h1 {
+    top: 60px;
+  }
+
+  label svg {
+    left: 47.5%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .logo img {
+    width: 9%;
+  }
+
+  header h1 {
+    top: 70px;
+  }
+
+  label svg {
+    left: 48.5%;
+  }
+}
+
+
+
+
+@media screen and (min-width: 2560px) {
+  label svg {
+    width: 100px;
+  }
+
+  header h1 {
+    top: 85px;
+  }
+
+  label svg {
+    left: 48.5%;
+  }
+
+    /* .logo img {
+        position: absolute;
+        width: 5.5%;
+        top: 4px; */
+    /* } */
+
+    /* header {
+        width: 100vw;
+        height: 11vh;
+        display: flex;
+    } */
+
+    /* header .container {
+
+    } */
+
+    /* header h1 {
+        position: absolute;
+        top: 43px;
+        left: 150px;
+        font-size: 50px;
+    } */
+
+    /* nav {
+        width: 100vw;
+    } */
+
+    /* nav ul {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    } */
+
+    /* main {
+    } */
+
+
+
+
+
+
+    /* footer {
+        background-color: rgb(25 25 25);;
+        width: 100vw;
+        height: 11vh;
+    } */
+
+}
+
