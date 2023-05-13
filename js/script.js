@@ -79,8 +79,8 @@ $(document).ready(function () {
     scrollBar: true,
     responsiveWidth: 400,
     navigation: true,
-    navigationTooltips: ["home", "about", "portfolio", "contact", "connect"],
-    anchors: ["home", "about", "portfolio", "contact", "connect"],
+    navigationTooltips: ["home", "about", "skills", "portfolio", "contact", "connect"],
+    anchors: ["home", "about", "skills", "portfolio", "contact", "connect"],
     menu: "#myMenu",
     fitToSection: false,
 
@@ -127,16 +127,20 @@ $(document).ready(function () {
   });
 
   // fullpage.js link navigation
-  $(document).on("click", "#skills", function () {
+  $(document).on("click", "#about", function () {
     $.fn.fullpage.moveTo(2);
   });
 
-  $(document).on("click", "#projects", function () {
+  $(document).on("click", "#skills", function () {
     $.fn.fullpage.moveTo(3);
   });
 
-  $(document).on("click", "#contact", function () {
+  $(document).on("click", "#projects", function () {
     $.fn.fullpage.moveTo(4);
+  });
+
+  $(document).on("click", "#contact", function () {
+    $.fn.fullpage.moveTo(5);
   });
 
   // smooth scrolling
