@@ -1,222 +1,142 @@
-$(document).ready(function () {
-  // typing animation
-  (function ($) {
-    $.fn.writeText = function (content) {
-      var contentArray = content.split(""),
-        current = 0,
-        elem = this;
-      setInterval(function () {
-        if (current < contentArray.length) {
-          elem.text(elem.text() + contentArray[current++]);
-        }
-      }, 80);
-    };
-  })(jQuery);
+$('#navigation a').on('click', function(e) {
+  e.preventDefault();
+  var hash = this.hash;
+  $('html, body').animate({
+    scrollTop: $(this.hash).offset().top
+  }, 1000);
+});
 
-  // input text for typing animation
-  $("#holder").writeText("WEB DESIGNER + FRONT-END DEVELOPER");
 
-  // initialize wow.js
-  new WOW().init();
+$('.toggler, .nav-content a:not(#dropdown-link)').on('click', function(){
+  $('.toggler').toggleClass('change');
+  $('.nav-content').slideToggle();
+  $('#dropdown-menu').slideUp();
+  $('.menu-overlay').toggle();
+});
 
-  // Push the body and the nav over by 285px over
-  var main = function () {
-    $(".fa-bars").click(function () {
-      $(".nav-screen").animate(
-        {
-          right: "0px"
-        },
-        200
-      );
+$('.nav-content .dropdown').on('click', function(){
+  $('#dropdown-menu').slideToggle();
+});
 
-      $("body").animate(
-        {
-          right: "285px"
-        },
-        200
-      );
-    });
+$('.menu-overlay').on('click', function(){
+  $('.toggler').removeClass('change');
+  $('.nav-content').slideUp();
+  $('#dropdown-menu').slideUp();
+  $('.menu-overlay').hide();
+});
 
-    // Then push them back */
-    $(".fa-times").click(function () {
-      $(".nav-screen").animate(
-        {
-          right: "-285px"
-        },
-        200
-      );
+$("#contact input, #contact textarea").on('focusout', function(){
 
-      $("body").animate(
-        {
-          right: "0px"
-        },
-        200
-      );
-    });
+  var text_val = $(this).val();
+  if (text_val === "") {
+    $(this).removeClass('has-value');
+  } else {
+    $(this).addClass('has-value');
+  }
 
-    $(".nav-links a").click(function () {
-      $(".nav-screen").animate(
-        {
-          right: "-285px"
-        },
-        500
-      );
+});
 
-      $("body").animate(
-        {
-          right: "0px"
-        },
-        500
-      );
-    });
-  };
+document.addEventListener("DOMContentLoaded", function() {
+  var slidesContainer = document.querySelector('.slides-container');
+  var slides = document.querySelectorAll('.slide');
+  var currentIndex = 0;
+  var intervalId;
+  var isMouseOver = false;
 
-  $(document).ready(main);
+  // Función para mostrar el próximo slide y ocultar los demás
+  function showNextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlideVisibility();
+  }
 
-  // initiate full page scroll
+  // Función para mostrar el slide anterior y ocultar los demás
+  function showPrevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlideVisibility();
+  }
 
-  $("#fullpage").fullpage({
-    scrollBar: true,
-    responsiveWidth: 400,
-    navigation: true,
-    navigationTooltips: ["home", "about", "skills", "portfolio", "contact", "connect"],
-    anchors: ["home", "about", "skills", "portfolio", "contact", "connect"],
-    menu: "#myMenu",
-    fitToSection: false,
+  // Función para actualizar la visibilidad de los slides
+  function updateSlideVisibility() {
+    var transformValue = -currentIndex * 100 + '%';
+    slidesContainer.style.transform = 'translateX(' + transformValue + ')';
+  }
 
-    afterLoad: function (anchorLink, index) {
-      var loadedSection = $(this);
+  // Funciones para pausar/reanudar el deslizamiento automático
+  function handleMouseEnter() {
+    isMouseOver = true;
+    clearInterval(intervalId);
+  }
 
-      //using index
-      if (index == 1) {
-        /* add opacity to arrow */
-        $(".fa-chevron-down").each(function () {
-          $(this).css("opacity", "1");
-        });
-        $(".header-links a").each(function () {
-          $(this).css("color", "white");
-        });
-        $(".header-links").css("background-color", "transparent");
-      } else if (index != 1) {
-        $(".header-links a").each(function () {
-          $(this).css("color", "black");
-        });
-        $(".header-links").css("background-color", "white");
-      }
+  function handleMouseLeave() {
+    isMouseOver = false;
+    startAutoSlide();
+  }
 
-      //using index
-      if (index == 2) {
-        /* animate skill bars */
-        $(".skillbar").each(function () {
-          $(this)
-            .find(".skillbar-bar")
-            .animate(
-              {
-                width: $(this).attr("data-percent")
-              },
-              2500
-            );
-        });
-      }
+  function startAutoSlide() {
+    if (!isMouseOver) {
+      intervalId = setInterval(showNextSlide, 6000);
     }
-  });
+  }
 
-  // move section down one
-  $(document).on("click", "#moveDown", function () {
-    $.fn.fullpage.moveSectionDown();
-  });
+  // Agrega eventos de mouse para pausar/reanudar el deslizamiento automático
+  slidesContainer.addEventListener('mouseenter', handleMouseEnter);
+  slidesContainer.addEventListener('mouseleave', handleMouseLeave);
 
-  // fullpage.js link navigation
-  $(document).on("click", "#about", function () {
-    $.fn.fullpage.moveTo(2);
-  });
+  // Inicia el deslizamiento automático
+  startAutoSlide();
 
-  $(document).on("click", "#skills", function () {
-    $.fn.fullpage.moveTo(3);
-  });
+  // Funciones para botones de control manual
+  window.prevSlide = showPrevSlide;
+  window.nextSlide = showNextSlide;
+});
 
-  $(document).on("click", "#projects", function () {
-    $.fn.fullpage.moveTo(4);
-  });
+$(function () {
+  // Get the form.
+  var form = $("#form");
 
-  $(document).on("click", "#contact", function () {
-    $.fn.fullpage.moveTo(5);
-  });
+  // Get the messages div.
+  var formMessages = $("#form-messages");
 
-  // smooth scrolling
-  $(function () {
-    $("a[href*=#]:not([href=#])").click(function () {
-      if (
-        location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
-        location.hostname == this.hostname
-      ) {
-        var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
-        if (target.length) {
-          $("html,body").animate(
-            {
-              scrollTop: target.offset().top
-            },
-            700
-          );
-          return false;
-        }
-      }
-    });
-  });
+  // Set up an event listener for the contact form.
+  $(form).submit(function (e) {
+    // Stop the browser from submitting the form.
+    e.preventDefault();
 
-  //ajax form
-  $(function () {
-    // Get the form.
-    var form = $("#ajax-contact");
+    // Serialize the form data.
+    var formData = $(form).serialize();
 
-    // Get the messages div.
-    var formMessages = $("#form-messages");
+    // Submit the form using AJAX.
+    $.ajax({
+      type: "POST",
+      url: $(form).attr("action"),
+      data: formData
+    })
+      .done(function (response) {
+        // Make sure that the formMessages div has the 'success' class.
+        $(formMessages).removeClass("error");
+        $(formMessages).addClass("success");
 
-    // Set up an event listener for the contact form.
-    $(form).submit(function (e) {
-      // Stop the browser from submitting the form.
-      e.preventDefault();
+        // Set the message text.
+        $(formMessages).text(response);
 
-      // Serialize the form data.
-      var formData = $(form).serialize();
-
-      // Submit the form using AJAX.
-      $.ajax({
-        type: "POST",
-        url: $(form).attr("action"),
-        data: formData
+        // Clear the form.
+        $("#name").val("");
+        $("#email").val("");
+        $("#message").val("");
       })
-        .done(function (response) {
-          // Make sure that the formMessages div has the 'success' class.
-          $(formMessages).removeClass("error");
-          $(formMessages).addClass("success");
+      .fail(function (data) {
+        // Make sure that the formMessages div has the 'error' class.
+        $(formMessages).removeClass("success");
+        $(formMessages).addClass("error");
 
-          // Set the message text.
-          $(formMessages).text(response);
-
-          // Clear the form.
-          $("#name").val("");
-          $("#email").val("");
-          $("#message").val("");
-        })
-        .fail(function (data) {
-          // Make sure that the formMessages div has the 'error' class.
-          $(formMessages).removeClass("success");
-          $(formMessages).addClass("error");
-
-          // Set the message text.
-          if (data.responseText !== "") {
-            $(formMessages).text(data.responseText);
-          } else {
-            $(formMessages).text(
-              "Oops! An error occured and your message could not be sent."
-            );
-          }
-        });
-    });
+        // Set the message text.
+        if (data.responseText !== "") {
+          $(formMessages).text(data.responseText);
+        } else {
+          $(formMessages).text(
+            "Oops! An error occured and your message could not be sent."
+          );
+        }
+      });
   });
 });

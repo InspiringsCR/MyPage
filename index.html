@@ -1,214 +1,400 @@
 <!DOCTYPE html>
 <html lang="en" >
   <head>
+    <title>GGCODE</title>
+    
     <meta charset="UTF-8">
-    <title>GGRANADOSCODE</title>
-    <meta name="description" content="Web designer and front-end developer">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,400,600' rel='stylesheet' type='text/css'>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/x-icon" href="img/flavicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="img/GGCODE2.ico">
   </head>
   
   <body>
-    <!-- navbar header -->
-    <div class="nav-header">
-      <div class="nav-brand">
-        <img src="img/logo.png">
-      </div>
-      <i class="fa fa-bars fa-3x"></i>
-      <div class="header-links">
-        <ul>
-          <li data-menuanchor="fifthPage"><a href="#contact">CONTACT</a></li>
-          <li data-menuanchor="fourthPage"><a href="#portfolio">PORTFOLIO</a></li>
-          <li data-menuanchor="thirdPage"><a href="#skills">SKILLS</a></li>
-          <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
+    <video autoplay muted loop id="myVideo">
+      <source src="img/video.mp4" type="video/mp4">
+    </video>
+
+    <div id="header" class="container-fluid d-flex">
+
+      <div class="menu-overlay"></div>
+
+      <div class="menu">
+        <div class="toggler">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+
+        <ul class="nav-content" id="navigation">
+          <li><a class="nav-link" href="#header">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop">CV</a>
+            <div id="dropdown-menu">
+              <ul>
+                <li><a class="dropdown-item" href="#cv">Skills</a></li>
+                <li><a class="dropdown-item" href="#experience">Experience</a></li>
+                <li><a class="dropdown-item" href="#education">Education</a></li>
+                <li><a class="dropdown-item" href="#diplomas">Diplomas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
+
+
+
+      <div class="row align-items-center justify-content-center text-center">
+        <div>
+          <h1>Gabriel Granados</h1>
+          <hr>
+          <h4>WEB DESIGNER + FRONT-END DEVELOPER</h4>
+        </div>
+      </div>
+
     </div>
-    <!-- end navbar header -->
 
-    <!-- sidebar slider -->
-    <div class="nav-screen">
-      <i class="fa fa-times fa-3x"></i>
-      <div class="nav-container">
-        <div class="nav-links">
-          <ul id='myMenu'>
-            <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
-            <li data-menuanchor="thirdPage"><a href="#skills">SKILLS</a></li>
-            <li data-menuanchor="fourthPage"><a href="#portfolio">PORTFOLIO</a></li>
-            <li data-menuanchor="fifthPage"><a href="#contact">CONTACT</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- end navbar slider -->
-
-    <!-- begin fullpage -->
-
-    <div id="fullpage">
-
-      <!-- begin section -->
-
-      <div class="section aboutme" data-anchor="aboutme">
-        <div class="opaque-bg animated fadeInDown">
-          <h1 style="color:white">GABRIEL GRANADOS</h1>
-          <p><span id="holder"></span><span class="blinking-cursor">|</span></p>
-        </div>
-        <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
-      </div>
-      <!-- end section -->
-
-      <!-- begin section -->
-
-      <div class="section" data-anchor="about">
-        <div class="content">
-          <h1 class="wow fadeInDown" data-wow-delay="0.2s">ABOUT ME</h1>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- Hi, I'm Gabriel Granados! I'm a JR web designer and developer focused on creating clean and responsive web designs!</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- I am a native of San Jose, Costa Rica.</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- I am currently studying at the Dev.F coding master campus located in Mexico. And I improve my English at the North American Costa Rican Cultural Center.</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- I really like everything related to technology, I really like learning new things.</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- I love sports, I usually play soccer, basketball, swimming.</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- I love video games, I usually like to play Valorant, Fornite, Rocket League, GTA V, among other video games.</p>
-        </div>
-      </div>
-
-      <div class="section" data-anchor="skills">
-        <div class="content">
-          <h1 class="wow fadeInDown" data-wow-delay="0.2s">SKILLS</h1>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- I have been in the Front End part for about 2 years since I started as a JR web developer. I started learning a little about the basics of python, I continued with the use of hypertext markup language (HTML5), style sheet languages: cascading style sheets (CSS), Syntactically Awesome Style Sheets (Sass). I also have knowledge of programming languages such as JavaScript and Frontend frameworks such as: React Js and Vite Js, within JavaScript execution environments I can use Node Js.</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- Regarding operating systems, I have knowledge about Ubuntu Linux and Windows.</p>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">- In the Back-end I have knowledge of SQL Databases, authentication and NoSQL</p>
-          <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
-            <div class="skillbar clearfix " data-percent="95%">
-              <div class="skillbar-title" style="background: #DD1E2F;"><span>HTML5</span></div>
-              <div class="skillbar-bar" style="background: #DD1E2F;"></div>
-              <div class="skill-bar-percent">95%</div>
-            </div> <!-- End Skill Bar -->
-
-            <div class="skillbar clearfix " data-percent="85%">
-              <div class="skillbar-title" style="background: #EBB035;"><span>CSS3</span></div>
-              <div class="skillbar-bar" style="background: #EBB035;"></div>
-              <div class="skill-bar-percent">85%</div>
-            </div> <!-- End Skill Bar -->
-
-            <div class="skillbar clearfix " data-percent="70%">
-              <div class="skillbar-title" style="background: #218559;"><span>Photoshop</span></div>
-              <div class="skillbar-bar" style="background: #218559;"></div>
-              <div class="skill-bar-percent">70%</div>
-            </div> <!-- End Skill Bar -->
-            
-            <div class="skillbar clearfix " data-percent="35%">
-              <div class="skillbar-title" style="background: #6840D4;"><span>JS</span></div>
-              <div class="skillbar-bar" style="background: #6840D4;"></div>
-              <div class="skill-bar-percent">35%</div>
-            </div> <!-- End Skill Bar -->
-
-            <div class="skillbar clearfix " data-percent="30%">
-              <div class="skillbar-title" style="background: #06A2CB;"><span>React</span></div>
-              <div class="skillbar-bar" style="background: #06A2CB;"></div>
-              <div class="skill-bar-percent">30%</div>
-            </div> <!-- End Skill Bar -->
-
-            <div class="skillbar clearfix " data-percent="20%">
-              <div class="skillbar-title" style="background: #AB4DD2;"><span>PHP</span></div>
-              <div class="skillbar-bar" style="background: #AB4DD2;"></div>
-              <div class="skill-bar-percent">20%</div>
-            </div> <!-- End Skill Bar -->
+    <div id="about" class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-12 picture">
+            <img src="https://www.atomix.com.au/media/2015/06/atomix_user31.png" class="rounded-circle" alt="picture">
+          </div>
+          <div class="col-md-9 col-sm-12 offset-md-1">
+            <h2>About</h2>
+            <p>- Hello, I'm Gabriel Granados! I'm a junior web designer and developer focused on creating clean, responsive web designs.</p>
+            <p>- I am a native of San José, Costa Rica. I trained as a web developer at the Dev.F coding master's campus located in Mexico and perfected my English at the North American Costa Rican Cultural Center.</p>
+            <p>- I have a passion for technology and enjoy constantly learning new things.</p>
+            <p>- In my free time, I am passionate about sports, particularly football, basketball and swimming.</p>
+            <p>- I am also a video game enthusiast.</p>
           </div>
         </div>
       </div>
-      <!-- end section -->
+    </div>
 
-      <!-- begin section -->
+    <div class="container-fluid" id="cv">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-12">
+            <h3>Skills</h3>
+          </div>
+          <div class="col-md-9 col-sm-12 offset-md-1">
+
+            <div class="skills">
+              <h4>Programming languages</h4>
+
+              <div class="skill-item">
+                <h4>HTML</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:100%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <h4>CSS</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:95%"></div>
+                </div>
+              </div>
+
+
+              <div class="skill-item">
+                <h4>JS</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:70%"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- <div class="skills">
+              <h4>Frameworks</h4>
+
+              <div class="skill-item">
+                <h4>Name</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <h4>Name</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:45%"></div>
+                </div>
+              </div>
+
+
+              <div class="skill-item">
+                <h4>Name</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:68%"></div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="skills">
+              <h4>Languages</h4>
+
+              <div class="skill-item">
+                <h4>SPANISH</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:100%"></div>
+                </div>
+              </div>
+
+
+              <div class="skill-item">
+                <h4>ENGLISH</h4>
+                <div class="progress">
+                  <div class="progress-bar" style="width:75%"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <hr id="experience">
+
+        <div class="row">
+          <div class="col-md-2 col-sm-12">
+            <h3>Experience</h3>
+          </div>
+          <div class="col-md-9 col-sm-12 offset-md-1">
+            <div class="exp">
+              <div class="box">
+                <h4>Web Designer & Developer</h4>
+                <h6>Soluciones SS&emsp;&#8226;&emsp;2022-2023</h6>
+                <!-- <p>Description</p> -->
+              </div>
+
+              <!-- <div class="box">
+                <h4>Job</h4>
+                <h6>Company&emsp;&#8226;&emsp;Date</h6>
+                <p>Description</p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <hr id="education">
+
+        <div class="row">
+          <div class="col-md-2 col-sm-12">
+            <h3>Education</h3>
+          </div>
+          <div class="col-md-9 col-sm-12 offset-md-1">
+            <div class="box">
+              <h4>Bachelor</h4>
+              <h6>Colegio Seminario&emsp;&#8226;&emsp;2019-2021</h6>
+              <!-- <p>Description</p> -->
+            </div>
+
+            <div class="box">
+              <h4>English Teaching</h4>
+              <h6>Centro Cultural Costarricense-Norteamericano&emsp;&#8226;&emsp;2022-2024</h6>
+              <!-- <p>Description</p> -->
+            </div>
+
+            <div class="box">
+              <h4>Web Developer Teaching</h4>
+              <h6>Dev.F&emsp;&#8226;&emsp;2022-2023</h6>
+              <!-- <p>Description</p> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- <hr id="diplomas">
+
+        <div class="row">
+          <div class="col-md-2 col-sm-12">
+            <h3>Diplomas</h3>
+          </div>
+          <div class="col-md-9 col-sm-12 offset-md-1">
+            <div class="box">
+              <h4>Name</h4>
+              <h6>School&emsp;&#8226;&emsp;Date</h6>
+              <p>Description</p>
+            </div>
+
+            <div class="box">
+              <h4>Name</h4>
+              <h6>School&emsp;&#8226;&emsp;Date</h6>
+              <p>Description</p>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+
+    <div class="container-fluid" id="portfolio">
+      <h2>Latest projects</h2>
 
       <div class="section" data-anchor="projects">
         <div class="content-slide">
-          <div class="slide">
-            <h1 class="wow fadeInDown" data-wow-delay="0.2s">SS WEBSITE</h1>
-            <p class="wow fadeInDown" data-wow-delay="0.2s">Website for Soluciones SS</p>
-            <a href="https://www.solucionesss.com" target="_blank"><img class="wow fadeInUp" data-wow-delay="0.2s" src="img/SSWEBSITE.jpg"></a>
+          <div class="slides-container">
+            <div class="slide active">
+              <h1>PERSONAL WEBSITE</h1>
+              <p>A Personal Responsive Website created with HTML5, CSS, JS and a little of PHP.</p>
+              <a href="https://ggcode.solucionesss.com/" target="_blank"><img class="wow fadeInUp" data-wow-delay="0.2s" src="img/PERSONAL.jpg"></a>
+            </div>
+            <div class="slide">
+              <h1>SOLUCIONES SS WEBSITE</h1>
+              <p>A Responsive Website for a Soluciones SS created with HTML5, SASS, Bootstrap, JS, a little of AJAX and PHP.</p>
+              <a href="https://www.solucionesss.com" target="_blank"><img class="wow fadeInUp" data-wow-delay="0.2s" src="img/SSWEBSITE.jpg"></a>
+            </div>
+            <div class="slide">
+              <h1>RESTAURANT LOS YOSES</h1>
+              <p>A Website for a Restaurant, created with HTML5, CSS and JS.</p>
+              <a href="https://menu.losyoses.solucionesss.com/" target="_blank"><img class="wow fadeInUp" data-wow-delay="0.2s" src="img/LOSYOSES.jpg"></a>
+            </div>
+            <div class="slide">
+              <h1>SOLUCIONES SS HARDWARE WEBSITE</h1>
+              <p>A Website for an extension of Soluciones SS created with WordPress.</p>
+              <a href="https://ss.tienda/" target="_blank"><img class="wow fadeInUp" data-wow-delay="0.2s" src="img/HW.jpg"></a>
+            </div>
           </div>
-          <div class="slide">
-            <h1>PORTFOLIO</h1>
-            <p>Mockup of a personal portfolio I was working on for a friend.</p>
-            <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/cascioportfolio.jpg">
-          </div>
-          <div class="slide">
-            <h1>PERSONAL WEBSITE</h1>
-            <p>Responsive vertical/horizontal header website theme.</p>
-            <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/personalsite.jpg">
-          </div>
-        </div>
-      </div>
-      <!-- end section -->
-
-      <!-- begin section -->
-
-      <div class="section" data-anchor="contact">
-        <div class="content wow fadeInDown" data-wow-delay="0.2s">
-          <h1>CONTACT ME</h1>
-          <p>Whether you're interested in working with me or just want to say hello, I'd love to hear from you!</p>
-          <br>
-          <div class="contact-form">
-
-            <div id="form-messages"></div>
-            <form id="ajax-contact" method="post" role="form" action="contact.php" data-toggle="validator">
-              <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="0.6s">
-                <input type="text" class="form-control" id="name" name="name" placeholder="NAME" data-error="Field can't be blank!" required>
-                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                <div class="help-block with-errors"></div>
-              </div>
-
-              <div class="form-group has-feedback wow fadeInRight" data-wow-delay="0.8s">
-                <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" data-error="Field can't be blank!" required>
-                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                <div class="help-block with-errors"></div>
-              </div>
-
-              <div class="form-group has-feedback wow fadeInLeft" data-wow-delay="1s">
-                <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="MESSAGE" data-error="Minimum of 10 characters" required></textarea>
-                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                <div class="help-block with-errors"></div>
-              </div>
-
-              <div class="hidden">
-                <input type="text" class="form-control" id="human" name="human" placeholder="">
-              </div>
-              <div class="wow fadeInUp" data-wow-delay="1s">
-                <button type="submit" id="submit" name="submit" class="btn btn-lg">SEND MESSAGE</button>
-              </div>
-            </form>
-            <br>
+      
+          <!-- Botones de control -->
+          <div class="control-btns">
+            <button onclick="prevSlide()">&lt;</button>
+            <button onclick="nextSlide()">&gt;</button>
           </div>
         </div>
-      </div>
-      <!-- end section -->
-
-      <!-- begin section -->
-
-      <div class="section fp-auto-height">
-        <div class="footer">
-          <p>CONNECT WITH ME</p>
-          <div class="social-links">
-            <span><a href="https://www.linkedin.com/in/kiyoshicr/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></span>
-            <!-- <span><a target="_blank" href="https://twitter.com/bradengelhardt" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></span> -->
-            <span><a href="https://github.com/kiyoshiCR" target="_blank"><i class="fa fa-github fa-2x"></i></a></span>
-          </div>
-        </div>
-      </div>
-      <!-- end section -->
 
     </div>
-    <!-- end fullpage -->
 
-    <!-- partial -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <p id="popup-message"></p>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 left">
+            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          </div>
+
+          <div class="col-lg-8 offset-lg-1">
+            <h4>Contact me!</h4>
+
+            <div id="form-messages"></div>
+            <form id="form" autocomplete="off" method="post" action="contact.php">
+              <div class="firstname">
+                <input id="firstname" type="text" name="firstname" required>
+                <span class="focus-border"></span>
+                <label class="label" for="firstname">Firstname *</label>
+
+              </div>
+
+              <div class="lastname">
+                <input id="lastname" type="text" name="lastname" required>
+                <span class="focus-border"></span>
+                <label class="label" for="name">Lastname *</label>
+
+              </div>
+
+              <div class="email">
+                <input id="email" type="email" name="email" required>
+                <span class="focus-border"></span>
+                <label class="label" for="email">Email *</label>
+
+              </div>
+
+              <div class="tel">
+                <input id="phone" type="tel" name="phone" required>
+                <span class="focus-border"></span>
+                <label class="label" for="phone">Phone</label>
+
+              </div>
+
+              <div class="subject">
+                <input id="subject" type="text" name="subject" required>
+                <span class="focus-border"></span>
+                <label class="label" for="subject">Subject *</label>
+
+              </div>
+
+              <div class="msg">
+                <textarea id="message" name="message" required></textarea>
+                <span class="focus-border"></span>
+                <label class="label" for="message">Message *</label>
+
+              </div>
+
+              <div class="input-info">* required field</div>
+
+              <div class="btn-div">
+                <button type="submit" class="button btn-send">
+                  <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                  Send
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-content">
+
+        <div>
+          <h4>Location</h4>
+          <p>San Jose, Costa Rica</p>
+        </div>
+
+        <div>
+          <h4>Email</h4>
+          <p>ggcode04@gmail.com</p>
+        </div>
+
+        <div>
+          <h4>Phone</h4>
+          <p>+506 8332-7024</p>
+        </div>
+
+        <div>
+          <h4>Social</h4>
+
+          <a href="https://www.linkedin.com/in/ggcode/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/kiyoshiCR" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+    </footer>
+
     <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js'></script><script  src="./js/script.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+
+    <script  src="js/script.js"></script>
   </body>
 </html>
